@@ -636,12 +636,12 @@ ForceRegKey($key)
 Set-ItemProperty -Path $key -Name 'NewTabPageShow' -Value 0 -ea SilentlyContinue 
 })
 
-$AdobeReaderBaseKey = 'HKCU:\Software\Adobe\Acrobat Reader\2017\AdobeViewer'
+$AdobeReaderBaseKey = 'HKCU:\Software\Adobe\Acrobat Reader\DC\AdobeViewer'
 
 #Create the key if missing 
 ForceRegKey($AdobeReaderBaseKey)
 
-$AdobeReaderPolicyFLKey = 'HKLM:\SOFTWARE\Policies\Adobe\Acrobat Reader\2017\FeatureLockdown'
+$AdobeReaderPolicyFLKey = 'HKLM:\SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockdown'
 
 #Create the key if missing 
 ForceRegKey($AdobeReaderPolicyFLKey)
@@ -714,7 +714,7 @@ Set-ItemProperty -Path $key -Name 'bShowMsgAtLaunch' -Value 0 -Force
 
 ## Job: EnableJS, H:\dev.public\VM_Setup\03_Acrobat\EnableJS.ps1
 $jobs.Add("\03_Acrobat\EnableJS.ps1", {
-$key = 'HKCU:\Software\Adobe\Acrobat Reader\2017\JSPrefs'
+$key = 'HKCU:\Software\Adobe\Acrobat Reader\DC\JSPrefs'
 #Create the key if missing 
 ForceRegKey($key)
 
@@ -727,7 +727,7 @@ Set-ItemProperty -Path $key -Name 'bEnableJS' -Value 1 -ea SilentlyContinue
 ## Job: TrustWindowsZones, H:\dev.public\VM_Setup\03_Acrobat\TrustWindowsZones.ps1
 $jobs.Add("\03_Acrobat\TrustWindowsZones.ps1", {
 
-$key = 'HKCU:\Software\Adobe\Acrobat Reader\2017\TrustManager' 
+$key = 'HKCU:\Software\Adobe\Acrobat Reader\DC\TrustManager' 
 #Create the key if missing 
 ForceRegKey($key)
 
