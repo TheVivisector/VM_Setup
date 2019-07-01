@@ -499,9 +499,9 @@ function GetRandomHost {
             $isValid = $true
         }
         catch [System.Net.Sockets.SocketException] {
-            if ($e.SocketErrorCode -ne [System.Net.Sockets.SocketError]::HostNotFound) {
-                throw
-            }
+            ##if ($e.SocketErrorCode -ne [System.Net.Sockets.SocketError]::HostNotFound) {
+                ##throw
+            ##}
         }
     } until ($isValid)    
     return $domain
